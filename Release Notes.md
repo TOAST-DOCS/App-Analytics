@@ -2,6 +2,7 @@
 
 |Version|	Release Date|	Notes|
 |---|---|---|
+|1.5.0|2016-12-29|[Android] 안정성 강화 [iOS] ATS 대응 작업, Enable Bitcode|
 |1.4.5|2016-10-06|[공통] Log 전송 로직 최적화|
 |1.4.4|2016-09-08|[공통] 네트웍 정보 로그 수집 추가|
 |1.4.3|2016-08-18|[공통] 코드 정리, API Entry Point 로그 남기게끔 수정<br/>[Android] Runtime Permissions(READ_PHONE_STATE) Exception 방어 코드 추가 <br/>[iOS] NSURLConnection => NSURLSession으로 수정, 디바이스 정보 얻는 부분 캐싱 처리|
