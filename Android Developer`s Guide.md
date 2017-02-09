@@ -105,6 +105,7 @@ Analytics SDK에서는 다음과 같은 Permission을 사용합니다.
 |China AOS-OtakuChannel|	CN_OtakuChannel|
 |China AOS-Tencent|	CN_Tencent|
 |China AOS-Lenovo|	CN_Lenovo|
+|China AOS-XINDNG|	CN_Xindong |
 |China AOS - Site 직접 배포(\*마켓을 거치지 않음)|	CN_Direct|
 
 ```
