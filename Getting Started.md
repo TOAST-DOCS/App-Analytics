@@ -8,7 +8,7 @@ Analytics가 제공하는 분석데이터와 캠페인관리 서비스를 이용
 
 Analytics SDK는 앱 이용자 로그를 수집하고, Analytics 웹에서 설정하는 캠페인을 앱에 노출될 수 있도록 합니다. Analytics 분석/프로모션 시스템은 SDK로부터 로그를 수집/분석하고, 게임서버 등과 통신하여 캠페인이 진행되도록 합니다.
 
-![[그림 1 서비스구조도]](http://static.toastoven.net/prod_analytics/an_1.gif)
+![[그림 1 서비스구조도]](http://static.toastoven.net/toastcloud/static/common/img/cms_img/analytics/an_1.gif)
 <center>[그림 1 서비스구조도]</center>
 
 
