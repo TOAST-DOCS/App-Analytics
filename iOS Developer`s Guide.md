@@ -3,7 +3,7 @@
 # 시작하기
 
 이 문서는 iOS에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](./Getting Started)를 참고하세요.  
-캠페인 연동 관련된 내용은 별도의 문서를 제공합니다. 이 문서에서는 클라이언트 구현에 대한 부분만 설명합니다. 전체적인 내용은 “캠페인 연동 가이드”를 참고하세요.  
+
 
 # 프로젝트 설정
 
@@ -81,7 +81,6 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 |선택적 연동|재화획득/사용|traceMoneyAcquisition, traceMoneyConsumption|앱내에서 머니를 획득하거나 소비 했을때 호출합니다.|밸런싱|
 |선택적 연동|레벨업|traceLevelUp|레벨업이 되었을 때 호출합니다.|밸런싱|
 |선택적 연동|친구수|traceFriendCount|친구수를 추적할때 호출합니다.|밸런싱|
-|선택적 연동|Campaign|setCampaignDelegate, (show/hide)Campaign|캠페인 노출 상태를 비동기적으로 통지받는 리스너를 등록합니다. 해당 Campaign 뷰의 노출을 요청하거나 숨길때 호출합니다.|캠페인|
 |선택적 연동|Custom Event|traceEvent|사용자 정의 이벤트가 발생했을 때 호출합니다.|커스텀이벤트|
 
 ## 초기화
@@ -233,128 +232,6 @@ consumptionAmount:10
 [TAGAnalytics traceFriendCount:100];
 ```
 
-## 캠페인 연동
-
-### 1. 캠페인 연동 사전 준비
-
-캠페인 연동 및 실행을 위해서는 별도의 가이드를 제공하고 있습니다.   
-Toast Analytics의 “캠페인 실행” 메뉴의 “페이지 가이드”를 참고하세요.   
-(<http://analytics.toast.com/promotion/share/document/4.2_Campaign_run.pdf>)
-
-### 2. 푸시 연동
-
-Analytics SDK에서 캠페인을 위한 푸시 사용을 위해서는 Toast Cloud Push를 사용해야 합니다. 푸시 사용에 관련된 전반적인 내용은 Toast Cloud Push에서 제공하는 “Client SDK Guide” 문서를 참고하세요.  
-[Client SDK Guide](../../Notification/Push/Client SDK Guide)   
-
-```
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-  ……
-  // SDK 초기화
-  [TAGAnalytics initializeSdk:@"AppKey"
-                    companyId:@"CompanyID"
-                   appVersion:@"AppVer"
-             useLoggingUserId:NO];
-  ……
-
-  // Toast Cloud Push에 푸시 토큰 등록에 성공한 경우 Toast Cloud Push에 등록한 UserID를
-  // Toast Analytics에게 전달해야 합니다. 이때 [TAGAnalytics setPushUserId]를 사용합니다.
-  // Toast Cloud Push SDK에서 registerWithAppKey의 onRegister Block에서 호출하면 됩니다.
-  [TCPushSdk registerWithAppKey:@"your_app_key" userId:@"your_userid" onRegister:^(int error) {
-    if (error == 0) {
-      [TAGAnalytics setPushUserId:@"your_userid"]
-    }
-  } options:options];
-
-  ....
-
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-  // 푸시를 받은 경우 푸시 데이터를 SDK에 전달
-  [TAGAnalytics setPushData:userInfo];
-}
-```
-
-### 3. 캠페인 Listener 구현 및 등록
-
-SDK는 일정한 주기로 캠페인 서버와 통신하여 캠페인 및 보상정보를 가져옵니다. 만약에 현재 사용자에게 진행할 캠페인이 있거나 사용자가 받을 보상 정보가 있는 경우 TAGCampaignDelegate를 통해서 알려줍니다.  
-따라서 캠페인 정보를 받기 위해서는 TAGCampaignDelegate를 구현해야 합니다.  
-
-```
-@protocol TAGCampaignDelegate
--(void)analyticsDidMissionComplete:(NSArray*)missionList;
--(void)analyticsDidCampaignVisibilityChange:(NSString*)adspaceName show:(BOOL)show;
--(void)analyticsDidCampaignLoadSuccess:(NSString*)adspaceName;
--(void)analyticsDidCampaignLoadFail:(NSString*)adspaceName errorCode:(int)errorCode
-  errorMessage:(NSString*)errorMessage;
--(void)analyticsDidCampaignClick:(NSString*)callbackInfo;
--(void)analyticsDidPromotionVisibilityChanged:(BOOL)show;
-@end
-```
-
-각 Callback은 아래와 같은 경우 호출됩니다
-
-- analyticsDidCampaignVisibilityChange: showCampaign, hideCampaign을 호출하여 캠페인 관련 팝업이나 배너가 보이거나 사라질때 호출됩니다.
-- analyticsDidMissionComplete: 사용자가 캠페인/프로모션을 진행하고 정해진 미션을 달성하여 보상 정보가 있을때 호출됩니다. 여기에서 받은 정보를 이용하여 게임서버를 통해서 보상을 지급해야 합니다. 캠페인 보상 관련 프로세스는 “캠페인 적용 가이드”문서를 참고하세요
-- analyticsDidCampaignLoadSuccess, analyticsDidCampaignLoadFail: 서버에서 가져 온 캠페인 정보 파싱 결과를 알려줍니다. 게임에서는 이 Callback에서 특별한 처리를 할 필요는 없습니다. 로그 확인을 위해 제공하는 Callback입니다.
-구현한TAGCampaignDelegate는 setCampaignDelegate를 이용하여 등록합니다.
-- analyticsDidCampaignClick는 링크 타입을 Deeplink로 선택한 경우 등록한 문자열을 전달하는 Callback입니다. 여기서 받은 문자열을 참고하여 게임에서 원하는 동작을 처리합니다.
-- analyticsDidPromotionVisibilityChange: iOS에서는 현재 사용하지 않습니다.
-
-```
-- (void)viewDidLoad {
-  ……
-  [TAGAnalytics setCampaignDelegate:self];
-  ……
-}
-
-……
-
--(void)analyticsDidMissionComplete:(NSArray *)missionList
-{
-  // missionList Array는 NSString으로 mission string입니다.
-  // mission string은 key/value 정보가 구분자 ‘|’으로 제공됩니다.
-  // 이 값을 가지고 게임서버를 통해 promotion server에서 검증하여 사용자에게
-  // 보상을 지급합니다.
-}
-
-- (void)analyticsDidCampaignVisibilityChange:(NSString *)adspaceName show:(BOOL)show
-{
-  // 배너,팝업 Visibility Change
-}
-
-- (void)analyticsDidCampaignLoadSuccess:(NSString *)adspaceName
-{
-  // for Debugging
-}
-
-- (void)analyticsDidCampaignLoadFail:(NSString *)adspaceName errorCode:(int)errorCode errorMessage:(NSString *)errorMessage
-{
-  // for Debugging
-}
-
--(void)analyticsDidCampaignClick:(NSString*)callbackInfo
-{
-  // 링크 타입을 Deeplink로 선택한 경우 등록한 문자열을 전달하는 Callback입니다.
-  // 여기서 받은 문자열을 참고하여 게임에서 원하는 동작을 처리합니다. (추후 오픈 예정)
-}
-```
-
-### 4. 캠페인 Show/Hide
-
-현재 사용자에게 진행 중인 캠페인이 있는 경우 Analytics 웹사이트에서 등록한 캠페인 팝업/배너를 보여주고, 노출된 팝업/배너를 숨기는 메소드입니다. 파라미터인 adspaceName은 Analytics 웹사이트에서 캠페인 등록시에 정의한 adspace 이름을 사용하면 됩니다. Adspace란 팝업/배너가 나타나는 게임 내의 특정 위치를 의미합니다.   
-showCampaign() 메소드는 해당 adspace를 사용하는 캠페인이 없으면 아무런 동작도 하지 않으므로, 캠페인 팝업/배너를 노출할 것으로 예상되는 게임 내의 여러 지점에 각각 다른 adspaceName으로 함수를 호출해두면 이후에 별도의 게임 클라이언트 수정없이도 게임 운영자가 Analytics 웹사이트에서 캠페인을 등록하는 작업만으로 쉽게 팝업/배너를 노출할 수 있게 됩니다.   
-Adspace 등록 방법은 “캠페인 테스트 가이드”를 참고하세요.
-
-```
-+(int)showCampaign:(NSString*)adspaceName parent:(UIView*)parent;
-+(int)showCampaign:(NSString*)adspaceName parent:(UIView*)parent animation:(int)animation
-  lifeTime:(int)lifeTime;
-+(int)hideCampaign:(NSString*)adspaceName;
-+(int)hideCampaign:(NSString*)adspaceName animation:(int)animation;
-```
 
 ## 커스텀 이벤트 사용
 
@@ -426,20 +303,7 @@ level:10];
 
 ![](http://static.toastoven.net/prod_analytics/image016.png)
 
-## 소요시간 측정
 
-특정 구간에 소요되는 시간을 측정할 수 있습니다. 예를들어 튜토리얼에 소요되는 시간을 측정하고 싶은경우, Scene 전환에 걸리는 시간을 측정하고 싶은경우등 시간 측정이 필요한 임의의 구간에 사용할 수 있습니다.   
-Intro Scene 로딩 시간을 측정하고 싶은 경우 아래와 같이 사용합니다. “INTRO_LOADING”은 특정 구간에 대해서 게임에서 정의하는 값입니다.  
-
-```
-- (void) onStart() {
-  [TAGAnalytics traceStartSpeed:@"INTRO_LOADING"];
-}
-
-- (void) onLoadCompleted() {
-  [TAGAnalytics traceEndSpeed:@"INTRO_LOADING"];
-}
-```
 
 ## 페이스북 설치 추적
 
