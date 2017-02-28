@@ -1,8 +1,10 @@
+## Analytics > App Analytics > Marketing Guide
+
 # Overview
  마케팅 담당자는 마케팅 실행 후 유입된 이용자를 모니터링하고 성과를 측정할 도구가 필요합니다.
 
  TOAST Analytics에서는
- 
+
 - 간편하게 트래킹 URL을 발급하여 채널별 유입되는 이용자를 실시간으로 모니터링할 수 있습니다.
 - Post-Install 성과측정을 위한 다양한 분석지표와 LTV 예측지표를 제공합니다.
 - 채널별 비교분석을 통해서 효율이 높은 채널을 믹스하여 운영할 수 있습니다.
@@ -98,7 +100,7 @@
 <Span style="color:#FF0000">※ 주) 정확한 유입경로별 분석을 위해 등록정보 수정은 지양해 주시기 바랍니다.</span>
 
 
- 
+
 ## 채널 등록
 
 ##### <Span style="color:#4B96E6">1) 등록 방법 </span>
@@ -123,7 +125,7 @@
 |:---|:---|
 |자체 등록|채널 추가를 통해 직접 등록한 경우|
 |시스템 등록|시스템에서 디폴트로 등록한 경우|
-|3rd Party|시스템에서 디폴트로 등록한 경우|
+|3rd Party|Postback으로 유입된 로그를 통해 자동으로 등록된 경우|
 
 ※ 시스템 등록과 3rd Party로 자동 등록된 채널은 수정 및 삭제할 수 없습니다.
 
@@ -139,8 +141,8 @@
 "앱 설정 → 마케팅 → 트래킹URL 발급" 메뉴에서 손쉽게 발급 받을 수 있습니다.
 ![](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/ko9.png)
 
-① 추가 버튼을 누르면 하단에 입력창이 활성화됩니다.
-② 3rd Party Tracker와 OS, 앱/전환 ID, 라벨 정보를 입력합니다.
+① 추가 버튼을 누르면 하단에 입력창이 활성화됩니다.<br>
+② 3rd Party Tracker와 OS, 앱/전환 ID, 라벨 정보를 입력합니다. <br>
 ※ 앱/전환 ID와 라벨정보는 각 3rd Party Tracker사 별로 확인 방법이 다르게 구성되어 있습니다.
 
 ##### <Span style="color:#4B96E6">2) 앱/ 전환 ID, 라벨 확인방법 </span>
