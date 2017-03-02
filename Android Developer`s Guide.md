@@ -262,7 +262,7 @@ public class TestActivty extends Activity {
     // 게임에서 로그인 처리 완료
     ……
     // User ID를 사용자 구분 기준으로 사용하는 경우 User ID를 등록하는 함수.
-    GameAnalytics.setUserId(“user_id”, true);
+    GameAnalytics.setUserId(“user_id”, false);
     ……
 }
 ```
