@@ -1,8 +1,8 @@
 ## Analytics > App Analytics > 콘솔 사용 가이드
 
-# Analytics 사이트에서 시작하기
+## Analytics 사이트에서 시작하기
 
-## 로그인 및 이용안내
+### 로그인 및 이용안내
 
  Analytics 서비스를 이용하시려면 서비스에 로그인 후 앱을 등록해야 합니다. 만일 아직 회원이 아니시라면 회원등록 후 로그인 하여 진행하실 수 있습니다.<br />
 처음 Analytics에 로그인하시면 앱등록을 하거나, 기존에 있던 앱에 조인신청을 하거나 Analytics에서 제공하는 기능들을 살펴보실 수 있습니다. 이미 컴퍼니나 앱에 소속되어 있는 경우라면 아래의 안내 화면은 노출되지 않습니다.
@@ -23,7 +23,7 @@ Analytics에 등록되어 있는 앱의 구성원이 되어 분석 데이터를 
 
 
 
-## 컴퍼니 검색 또는 생성
+### 컴퍼니 검색 또는 생성
 
 #### 1. 컴퍼니 검색 및 구성원 추가 신청하기
 Analytics는 개별 앱의 데이터를 분석하여 볼 수 있을 뿐 아니라, 회사 단위로 앱들의 데이터를 한번에 볼 수 있도록 지원합니다. 이를 위해, 앱을 등록하기 위해서는 반드시 컴퍼니에 소속되어 있어야 하므로 아직 컴퍼니에 소속되어 있지 않은 이용자가 앱을 등록하려는 경우 다음과 같은 컴퍼니 검색 화면을 보실 수 있습니다.<br />
@@ -55,7 +55,7 @@ Analytics는 개별 앱의 데이터를 분석하여 볼 수 있을 뿐 아니�
 
 
 
-## 앱 등록하기
+### 앱 등록하기
 
 #### 1. 앱 기본정보 등록
 Analytics에 앱을 등록하려면 앱 기본정보 입력 페이지에서 다음 내용을 입력하신 후 저장버튼을 눌러주세요.
@@ -114,7 +114,7 @@ Analytics에 앱을 등록하려면 앱 기본정보 입력 페이지에서 다�
 
 
 
-## 앱 설정하기
+### 앱 설정하기
 
 앱 설정은 앱 기본정보, 구성원설정, 분석설정, 마케팅관리로 구성되어 있으며, 앱의 전체적인 관리를 하실 수 있습니다. <br />
 앱 설정 메뉴는 GNB의 앱 이름 옆에 노출되는 톱니바퀴 모양의 버튼을 눌러 들어가실 수 있습니다.
@@ -162,7 +162,7 @@ Analytics에 앱을 등록하려면 앱 기본정보 입력 페이지에서 다�
 유입경로별 비교를 위해 트래킹할 마케팅 채널 및 유입경로를 설정할 수 있습니다. 일부 채널은 디폴트로 제공되며, 등록하신 유입경로 별로 세분화된 마케팅 효과를 확인하실 수 있습니다.
 
 
-## 내 정보 및 컴퍼니 관리
+### 내 정보 및 컴퍼니 관리
 
 GNB우측의 인물아이콘을 누르시면 내정보 및 컴퍼니 관리 페이지로 이동하실 수 있습니다.
 
@@ -199,7 +199,7 @@ GNB우측의 인물아이콘을 누르시면 내정보 및 컴퍼니 관리 페�
 
 
 
-# TOAST Cloud Console에서 시작하기
+## TOAST Cloud Console에서 시작하기
 
 TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 생성 후, 좌측 Analytics > Game Analytics 메뉴에서 [상품이용] 버튼을 클릭하시면 Analytics 상품 사용이 시작됩니다.
 
@@ -208,13 +208,13 @@ TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 �
 
 [그림 15 TOAST Cloud 웹콘솔에서 Analytics 시작하기]
 
-## 앱 기본정보 등록
+### 앱 기본정보 등록
 [상품이용] 선택하면 앱 등록 페이지로 이동하여, Analytics를 사용하실 수 있습니다. 앱 등록은 앱 등록하기 항목을 참조해주세요. 앱 등록 시 컴퍼니는 새로 생성하거나 속해있던 컴퍼니가 있는 경우 자동으로 선택됩니다.
 
-## 지표 보기
+### 지표 보기
 앱 등록 후 Console 화면에서 기본 모니터링 지표를 확인 할 수 있습니다. 추가 지표는 Console 화면의 상단 [지표분석 더보기] 버튼을 선택하여 Analytics 화면 이동하여 확인할 수 있습니다.
 
-# 마케팅 트래킹 소개
+## 마케팅 트래킹 소개
  TOAST Analytics 마케팅 트래킹 기능으로 광고로 유입되는 이용자를 분석할 수 있습니다.
 
 ##### <Span style="color:#4B96E6">1) 마케팅 담당자가 직접 매체에 광고를 집행하는 경우</span>
@@ -247,7 +247,7 @@ TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 �
 ![](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/ko3.png)
 
 
-## 트래킹URL 발급
+### 트래킹URL 발급
  TOAST Analytics에서 발급한 트래킹 URL을 집행하는 광고에 등록하면 이용자가 어떤 매체를 통해 설치했는지 트래킹 할 수 있습니다.
 
 |용어|가이드|
@@ -296,7 +296,7 @@ TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 �
 
 
 
-## 채널 등록
+### 채널 등록
 
 ##### <Span style="color:#4B96E6">1) 등록 방법 </span>
 "앱 설정 → 마케팅 → 채널등록" 메뉴에서 손쉽게 발급 받을 수 있습니다.
@@ -324,7 +324,7 @@ TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 �
 
 ※ 시스템 등록과 3rd Party로 자동 등록된 채널은 수정 및 삭제할 수 없습니다.
 
-## 3rd Party Tracker 추가
+### 3rd Party Tracker 추가
 3rd Party Tracker를 통해 광고를 집행한 경우 Postback 기능을 이용하여 이용자를 트래킹 할 수 있습니다.<br>
 먼저 3rd Party Tracker 정보를 TOAST Analytics에 등록 후 각 사이트에서 Postback을 설정합니다.<br>
 
@@ -362,7 +362,7 @@ TOAST Analytics에서는 현재 MAT, AppsFlyer, Google Adwords와의 연동이 �
 ![](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/ko12.png)
 
 
-## 3rd Party Tracker Postback 설정
+### 3rd Party Tracker Postback 설정
 3rd Party Tracker에서 Postback으로 로그를 전송받기 위해 TOAST Analytics의 URL과 전송받을 파라미터를 설정합니다.<br>
 전송받을 파라미터 설정 방법은 각 3rd Party 별로 다르게 구성되어 있습니다.<br>
 
@@ -431,7 +431,7 @@ http://redirect-analytics.toast.com/postback/mat?aid=99716&package_nm={package_n
 
 
 
-## 구글애드워즈 광고트래킹
+### 구글애드워즈 광고트래킹
 구글애드워즈에서는 자사 광고로 유입된 이용자에 대해 Postback으로 로그를 전송하고 있습니다.<br>
 3rd Party Tracker Postback 설정으로 구글애드워즈 광고 유입이용자를 트래킹 할 수 있습니다.
 
@@ -518,7 +518,7 @@ TOAST Analytics에서는 3rd Party Tracker 연동 설정이 완료되면 실시�
 
 ![](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/ko23.png)
 
-## 페이스북 광고트래킹
+### 페이스북 광고트래킹
 페이스북 광고 설정 시 딥링크에 레퍼러를 추가하여 이용자를 트래킹 할 수 있습니다.<br>
 3rd Party Tracker를 통해 광고트래킹을 집행할 경우 Postback과 중복되지 않게 한 가지 방법만 등록합니다.
 
@@ -593,7 +593,7 @@ ex) appscheme://action?param1=val1&param2=val2&tafb=channel_216,path_1075,charge
 ![](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/ko30.png)
 
 
-## 포스트백 데이터 전송
+### 포스트백 데이터 전송
 TOAST Analytics에서 수집된 이벤트 로그를 전송받을 수 있습니다.<br>
 현재 설치 로그에 대해서만 지원하고 있습니다.
 
@@ -667,7 +667,7 @@ TOAST Analytics에서 수집된 이벤트 로그를 전송받을 수 있습니�
 | rt_day 30 | 재방문율 D30 | number | 30일 차 재방문율 |
 | rt_day 60 | 재방문율 D60 | number | 60일 차 재방문율 |
 
-## 트래킹 이벤트 설정
+### 트래킹 이벤트 설정
 마케팅으로 유입된 이용자를 대상으로 커스텀 이벤트 현황을 확인할 수 있습니다.
 커스텀 이벤트 로그는 등록 후 다음날 부터 이벤트 로그를 집계하기 때문에 마케팅 집행 전에 미리 등록하시기 바랍니다.
 <span style="color:#FF0000">주) 커스텀 이벤트에 등록된 이벤트만 등록할 수 있습니다.</span>
