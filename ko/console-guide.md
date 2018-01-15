@@ -199,7 +199,7 @@ GNB우측의 인물아이콘을 누르시면 내정보 및 컴퍼니 관리 페�
 
 
 
-## TOAST Cloud Console에서 시작하기
+# TOAST Cloud Console에서 시작하기
 
 TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 생성 후, 좌측 Analytics > Game Analytics 메뉴에서 [상품이용] 버튼을 클릭하시면 Analytics 상품 사용이 시작됩니다.
 
@@ -214,7 +214,7 @@ TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 �
 ## 지표 보기
 앱 등록 후 Console 화면에서 기본 모니터링 지표를 확인 할 수 있습니다. 추가 지표는 Console 화면의 상단 [지표분석 더보기] 버튼을 선택하여 Analytics 화면 이동하여 확인할 수 있습니다.
 
-## 마케팅 트래킹 소개
+# 마케팅 트래킹 소개
  TOAST Analytics 마케팅 트래킹 기능으로 광고로 유입되는 이용자를 분석할 수 있습니다.
 
 ##### <Span style="color:#4B96E6">1) 마케팅 담당자가 직접 매체에 광고를 집행하는 경우</span>
