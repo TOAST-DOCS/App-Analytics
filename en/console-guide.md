@@ -1,4 +1,4 @@
-## Analytics > App Analytics > 콘솔 사용 가이드
+## Analytics > App Analytics > Console Guide
 
 # Analytics 사이트에서 시작하기
 
