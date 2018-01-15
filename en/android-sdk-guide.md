@@ -1,4 +1,4 @@
-## Analytics > App Analytics > Android SDK 사용 가이드
+## Analytics > App Analytics > Android SDK Guide
 
 # 시작하기
 
