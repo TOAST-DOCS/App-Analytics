@@ -204,7 +204,7 @@ GNB우측의 인물아이콘을 누르시면 내정보 및 컴퍼니 관리 페�
 TOAST Cloud <http://console.cloud.toast.com> 의 웹 콘솔에서 프로젝트 생성 후, 좌측 Analytics > Game Analytics 메뉴에서 [상품이용] 버튼을 클릭하시면 Analytics 상품 사용이 시작됩니다.
 
 
-![그림 15 TOAST Cloud 웹콘솔에서 Analytics 시작하기](http://static.toastoven.net/toastcloud/static/common/img/cms_img/analytics/an_26_1.jpg)
+![그림 15 TOAST Cloud 웹콘솔에서 Analytics 시작하기](http://static.toastoven.net/toastcloud/static/common/img/cms_img/analytics/an_26_1.png)
 
 [그림 15 TOAST Cloud 웹콘솔에서 Analytics 시작하기]
 
