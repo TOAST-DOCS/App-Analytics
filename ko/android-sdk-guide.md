@@ -2,7 +2,7 @@
 
 ## 시작하기
 
-이 문서는 Android에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
+이 문서는 Android에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/console-guide)를 참고하세요.
 
 
 ## 프로젝트 설정
@@ -195,7 +195,7 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 
 ### 초기화
 
-SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 아이디”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
+SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 아이디”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/console-guide)를 참고하세요.
 
 initializeSDK 함수의 AppID는 앱 정보의 “AppKey”를, CompanyID는 “컴퍼니 아이디” 를 사용합니다.
 

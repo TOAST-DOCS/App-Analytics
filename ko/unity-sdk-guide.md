@@ -2,7 +2,7 @@
 
 ## 시작하기
 
-이 문서는 Unity에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
+이 문서는 Unity에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/console-guide)를 참고하세요.
 - 이 문서는 Unity4 기준으로 작성되었습니다.
 - Unity 플러그인 기능은 Pro 버전에서만 지원합니다. 따라서 SDK Plugin을 사용하기 위해서는 Unity Pro 버전을 사용하여 어플리케이션을 개발해야 합니다.
 - Android Manifest 설정, iOS Build 설정등은 각 OS별로 제공되는 Programming Guide에서 설명합니다.
@@ -80,7 +80,7 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 
 ### 초기화
 
-SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 인증key”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
+SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 인증key”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/console-guide)를 참고하세요.
 
 ![그림 4 인증키 정보](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/pg_unity_004.png)
 
