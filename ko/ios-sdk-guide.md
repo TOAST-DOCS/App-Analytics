@@ -8,7 +8,7 @@
 
 ### SDK 다운로드
 
-[다운로드 링크](/Download/) 에서 App Analytics의 iOS SDK 파일을 다운로드 합니다.
+[다운로드 링크](/Download/) 에서 App Analytics iOS SDK 파일을 다운로드 합니다.
 
 ### 프로젝트설정
 
@@ -85,7 +85,7 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 
 ### 초기화
 
-SDK를 사용하기 위해서는 앱 등록 후 발행되는 "앱 인증Key"와 "컴퍼니 아이디"가 필요합니다. 앱 등록 방법은 링크(<http://docs.cloud.toast.com/ko/Analytics/App%20Analytics/Getting%20Started/#_4>)를 참고하세요.
+SDK를 사용하기 위해서는 앱 등록 후 발행되는 "앱 인증Key"와 "컴퍼니 아이디"가 필요합니다. 앱 등록 방법은 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
 ![AppKey](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/pg_ios_002.png)
 
 GameAnalytics SDK를 사용하기 위해서는 SDK 초기화를 먼저 수행해야 합니다.<br>
