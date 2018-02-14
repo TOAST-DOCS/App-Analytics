@@ -13,7 +13,7 @@
 
 ### SDK 다운로드
 
-SDK는 <http://docs.cloud.toast.com/ko/Download/> 에서 다운로드 할 수 있습니다.
+SDK는 [다운로드 링크](/Download/)를 통해 다운로드 할 수 있습니다.
 
 ### SDK 구성
 
@@ -80,7 +80,7 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 
 ### 초기화
 
-SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 인증key”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 링크(<http://docs.cloud.toast.com/ko/Analytics/App%20Analytics/Getting%20Started/#_4>)를 참고하세요.
+SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 인증key”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
 
 ![그림 4 인증키 정보](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/pg_unity_004.png)
 

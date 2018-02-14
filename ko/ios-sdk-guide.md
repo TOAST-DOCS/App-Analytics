@@ -8,7 +8,7 @@
 
 ### SDK 다운로드
 
-<http://docs.cloud.toast.com/ko/Download/> 에서 iOS SDK 파일을 다운로드 합니다.
+[다운로드 링크](/Download/) 에서 App Analytics의 iOS SDK 파일을 다운로드 합니다.
 
 ### 프로젝트설정
 

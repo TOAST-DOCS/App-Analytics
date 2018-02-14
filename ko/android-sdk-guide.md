@@ -10,8 +10,8 @@
 
 ## SDK 다운로드
 
-1. Analytics SDK 다운로드
-    <http://docs.cloud.toast.com/ko/Download/>에서 Android SDK 파일을 다운로드 합니다.
+1. Analytics SDK 
+    [다운로드 링크](/Download/)에서 Android SDK 파일을 다운로드 합니다.
 2. 구글 서비스 API 다운로드
     Analytics SDK에서는 Advertising ID를 사용하기 위해서 Google Player Serverice가 필요합니다.
     안드로이드 SDK Manager를 이용하여 구글 플레이 서비스 API(google-play-service.jar) 를 다운로드 받습니다.
