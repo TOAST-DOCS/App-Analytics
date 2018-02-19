@@ -1,17 +1,17 @@
-## Analytics > App Analytics > Android SDK Guide
+## Analytics > App Analytics > Android SDK 사용 가이드
 
-# 시작하기
+## 시작하기
 
-이 문서는 Android에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
+이 문서는 Android에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/zh/console-guide)를 참고하세요.
 
 
-# 프로젝트 설정
+## 프로젝트 설정
 
 
 ## SDK 다운로드
 
-1. Analytics SDK 다운로드
-    <http://docs.cloud.toast.com/ko/Download/>에서 Android SDK 파일을 다운로드 합니다.
+1. Analytics SDK 
+    [다운로드 링크](/Download/)에서 Android SDK 파일을 다운로드 합니다.
 2. 구글 서비스 API 다운로드
     Analytics SDK에서는 Advertising ID를 사용하기 위해서 Google Player Serverice가 필요합니다.
     안드로이드 SDK Manager를 이용하여 구글 플레이 서비스 API(google-play-service.jar) 를 다운로드 받습니다.
@@ -174,7 +174,7 @@ Install Receiver 설정이 잘못된 경우 신규 사용자 집계가 잘못될
 </receiver>
 ```
 
-# API 연동
+## API 연동
 
 Toast Analytics는 연동된 API 에 따라 다양한 지표를 제공 하고 있습니다.  
 필수 연동 API 만 연동해도  이용자 유입/유출 및 이탈과 관련한 모든 지표가 제공되며, 컨텐츠 및  추적이 필요한 지표 유형에 맞춰 적절한 API 추가 연동이 필요합니다.
@@ -193,9 +193,9 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 |선택적 연동|Custom Event|traceEvent|사용자 정의 이벤트가 발생했을 때 호출합니다.|커스텀이벤트|
 
 
-## 초기화
+### 초기화
 
-SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 아이디”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 링크(<http://docs.cloud.toast.com/ko/Analytics/App%20Analytics/Getting%20Started/#_4>)를 참고하세요.
+SDK를 사용하기 위해서는 앱 등록 후 발행되는 “앱 아이디”와 “컴퍼니 아이디”가 필요합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/zh/console-guide)를 참고하세요.
 
 initializeSDK 함수의 AppID는 앱 정보의 “AppKey”를, CompanyID는 “컴퍼니 아이디” 를 사용합니다.
 
@@ -225,7 +225,7 @@ public class TestActivty extends Activity {
 }
 ```
 
-## 사용자 구분 기준 설정
+### 사용자 구분 기준 설정
 
 <span style="color:red;">운영중에 사용자 구분 기준을 변경하면 변경 전/후 데이터의 연관 관계가 끊어지기 때문에 게임 오픈 이후에는 기준을 바꾸지 않아야 합니다.</span>
 
@@ -278,7 +278,7 @@ Advertise ID 관련 내용은 아래 링크를 참고하세요.
 - Android : <https://developer.android.com/google/play-services/id.html>
 
 
-## 세션 추적
+### 세션 추적
 
 DAU(Daily Active User)와 게임 체류 시간을 추적하기 위한 연동입니다.
 
@@ -314,11 +314,11 @@ public class TestActivty extends Activity {
 ```
 
 
-## 액션 추적
+### 액션 추적
 
 In-App Purchase, 머니 획득/사용, 레벨업, 친구 수 변경등 사용자의 Action에 대해 추적할 수 있습니다.
 
-### In-App Purchase
+#### In-App Purchase
 
 In-App Purchase가 발생한 후 tracePurchase를 호출하여 매출 정보를 전송합니다.
 
@@ -335,7 +335,7 @@ Global Service를 하는 경우 상품 가격 정보는 주의해서 사용해�
 getSkuDetails의 'price_amount_micros ' property를 사용합니다. 자세한 내용은 Google 제공하는 In-app Billing Reference를 참고하세요. (<http://developer.android.com/intl/ko/google/play/billing/billing_reference.html#getSkuDetails>)
 
 
-### 재화 획득/사용
+#### 재화 획득/사용
 
 게임내에서 재화의 획득/사용시 호출합니다. 1차 재화, 2차 재화의 변동량을 추적합니다. 일반적으로 1차 재화는 In-App Purchase를 통해서 구매하는 재화(ex. 보석, 루비등) 입니다. 2차 재화는 1차 재화를 이용하여 구매하는 재화(ex. 체리, 하트등) 입니다.
 
@@ -359,7 +359,7 @@ GameAnalytics.traceMoneyAcquisition("CODE_BUY_CHERRY", "1", 100, 10);
 
 1차 재화를 사용하여 2차 재화를 구입한 경우 실제 ‘1차 재화 감소’->‘2차 재화 증가’가 발생합니다. 하지만 2차 재화를 구입하기 위해서 1차 재화를 사용하는 경우 별도의 재화 소모로 판정하지 않고 싶은 경우 ‘2차 재화 획득’ 로그만 전송하여도 됩니다.
 
-### 레벨업
+#### 레벨업
 
 사용자 레벨이 변경되는 경우 traceLevelUp을 호출합니다. 참고로 대부분의 액션 추적 API는 레벨별 액션 추적을 위해서 사용자 Level을 같이 받습니다.
 
@@ -374,7 +374,7 @@ GameAnalytics.traceLevelUp(10);
 ```
 
 
-### 친구
+#### 친구
 
 사용자의 친구 숫자를 등록합니다. 일반적으로 앱 실행 후 친구 정보 로딩이 완료된 시점에 호출하면 됩니다.
 
@@ -382,11 +382,11 @@ GameAnalytics.traceLevelUp(10);
 GameAnalytics.traceFriendCount(100);
 ```
 
-## 커스텀 이벤트 사용
+### 커스텀 이벤트 사용
 
 App에서 기본지표 이외에 특정 이벤트를 정의&분석하고 싶은 경우 사용합니다.
 
-### 1. API 적용
+#### 1. API 적용
 
 ```java
 GameAnalytics.traceEvent("eventType", "eventCode", "param1", "param2", value, level);
@@ -403,7 +403,7 @@ GameAnalytics.traceEvent("eventType", "eventCode", "param1", "param2", value, le
 
 traceEvent에 사용하는 String Type 파라미터(event type, event code, param1, param2)는 각각 50byte까지 사용할 수 있습니다. 그리고 event 하위에 발생 가능한 param1 은 300개까지, 또 param1 하위에 발생 가능한 param2는 200개까지 사용할 수 있습니다.  
 
-### 2. 지표 활용
+#### 2. 지표 활용
 
 활용 목적에 따라 이벤트 설계 시 고려할 사항은 다음과 같습니다.
 
@@ -438,7 +438,7 @@ GameAnalytics.traceEvent("STAGE", "STAGE_BOSS_VICTORY", "DRAGON_VALLEY", "BOSS_M
 ![](http://static.toastoven.net/prod_analytics/image016.png)
 
 
-## 페이스북 설치 추적
+### 페이스북 설치 추적
 
 페이스북 광고를 통한 앱 설치를 추적할 수 있습니다. 이 기능은 Facebook에서 제공하는 Deep Linking 기능을 이용합니다.
 관련하여 상세한 내용 및 테스트 방법은 Facebook에서 제공하는 문서(<https://developers.facebook.com/docs/app-ads/deep-linking>)를 참고하세요. ApplinkData.fetchDeferredAppLinkData 는 Facebook SDK에서 제공하는 API입니다.
@@ -457,7 +457,7 @@ AppLinkData.fetchDeferredAppLinkData(this,
 );}
 ```
 
-# SDK 설정
+## SDK 설정
 
 ## 디버그 모드 활성화
 개발중에 SDK 로그 확인을 위해서 로그 출력 여부를 설정할 수 있습니다.
@@ -488,7 +488,7 @@ Android : server response (***) : 200 OK
 ```
 
 
-## 디바이스 정보 확인
+### 디바이스 정보 확인
 SDK에서 수집하는 Device 정보를 확인할 수 있습니다.
 
 현재 확인 가능한 값은 Device ID입니다. 
@@ -503,7 +503,7 @@ private void printDeviceInfo() {
 }
 ```
 
-## SDK 버전 확인
+### SDK 버전 확인
 SDK 버전은 GameAnalytics.getVersion()” 함수를 통해 확인할 수 있습니다.
 
 ```java
