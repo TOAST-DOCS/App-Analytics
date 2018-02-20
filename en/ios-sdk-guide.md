@@ -1,22 +1,22 @@
-## Analytics > App Analytics > iOS SDK Guide
+## Analytics > App Analytics > iOS SDK 사용 가이드
 
-# 시작하기
+## 시작하기
 
-이 문서는 iOS에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/Getting%20Started/#_4)를 참고하세요.
+이 문서는 iOS에서 Analytics SDK를 연동하기 위한 방법에 대해 설명합니다. Analytics SDK를 사용하기 위해서는 먼저 앱을 등록해야 합니다. 앱 등록 방법은 [링크](/Analytics/App%20Analytics/en/console-guide)를 참고하세요.
 
-# 프로젝트 설정
+## 프로젝트 설정
 
-## SDK 다운로드
+### SDK 다운로드
 
-<http://docs.cloud.toast.com/ko/Download/> 에서 iOS SDK 파일을 다운로드 합니다.
+[다운로드 링크](/Download/) 에서 App Analytics iOS SDK 파일을 다운로드 합니다.
 
-## 프로젝트설정
+### 프로젝트설정
 
-### 라이브러리 dependency 설정
+#### 라이브러리 dependency 설정
 다운로드 받은TAGAnalytics.h 파일을 프로젝트에 포함시키고, libTAGAnalytics.a 파일을 "Linked Frameworks and Libraries"에 추가합니다. "AdSuppert.framework", "libsqlite3.dylib", "CoreTelephony.framework"도 추가합니다.
 ![라이브러리링크](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/pg_ios_001.png)
 
-## iOS9 ATS 설정
+### iOS9 ATS 설정
 iOS9부터 ATS(App Transport Security)기능이 추가되었습니다.
 앱에서 http,https 로 접근하는 도메인에 대한 설정이 필요합니다.
 XCode7 이상에서 빌드하는 경우만 해당됩니다. 자세한 내용은 Apple 문서를 참고하세요.
@@ -65,7 +65,7 @@ Toast Analytics에서는 아래 2개의 도메인에 접근합니다.
 </dict>
 ```
 
-# API 연동
+## API 연동
 
 Toast Analytics는 연동된 API 에 따라 다양한 지표를 제공 하고 있습니다.  
 필수 연동 API 만 연동해도  이용자 유입/유출 및 이탈과 관련한 모든 지표가 제공되며, 컨텐츠 및  추적이 필요한 지표 유형에 맞춰 적절한 API 추가 연동이 필요합니다.
@@ -83,9 +83,9 @@ Toast Analytics 로그인 후, “상단 Menu>고객센터>데모보기” 를 �
 |선택적 연동|친구수|traceFriendCount|친구수를 추적할때 호출합니다.|밸런싱|
 |선택적 연동|Custom Event|traceEvent|사용자 정의 이벤트가 발생했을 때 호출합니다.|커스텀이벤트|
 
-## 초기화
+### 초기화
 
-SDK를 사용하기 위해서는 앱 등록 후 발행되는 "앱 인증Key"와 "컴퍼니 아이디"가 필요합니다. 앱 등록 방법은 링크(<http://docs.cloud.toast.com/ko/Analytics/App%20Analytics/Getting%20Started/#_4>)를 참고하세요.
+SDK를 사용하기 위해서는 앱 등록 후 발행되는 "앱 인증Key"와 "컴퍼니 아이디"가 필요합니다. 앱 등록 방법은 앱 등록 방법은 [링크](/Analytics/App%20Analytics/en/console-guide)를 참고하세요.
 ![AppKey](https://raw.githubusercontent.com/ToastAnalytics/ToastAnalytics/master/docs/Developer/images/pg_ios_002.png)
 
 GameAnalytics SDK를 사용하기 위해서는 SDK 초기화를 먼저 수행해야 합니다.<br>
@@ -103,7 +103,7 @@ GameAnalytics 클래스의 initializeSDK 함수는 SDK 초기화를 수행하는
 }
 ```
 
-### 사용자 구분 기준 설정
+#### 사용자 구분 기준 설정
 <span style="color:red;">운영중에 사용자 구분 기준을 변경하면 변경 전/후 데이터의 연관 관계가 끊어지기 때문에 게임 오픈 이후에는 기준을 바꾸지 않아야 합니다.</span><br>
 Analytics는 사용자를 구분하는 기준으로 Advertise ID 또는 User ID를 사용합니다. 두가지를 모두 사용할 수는 없고, 게임 정책에 따라 한가지를 선택하여야 합니다.<br>
 일반적으로 Advertise ID를 기준으로 사용합니다. 하지만 게임에서 특별한 요구사항이 있는 경우 User ID를 기준으로도 사용할 수 있습니다.<br>
@@ -141,7 +141,7 @@ setUserId 함수는 initializeSDK 호출 이후에 게임에서 로그인 성공
 Advertise ID 관련 내용은 아래 링크를 참고하세요.<br>
 <https://developer.apple.com/LIBRARY/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html>
 
-## 세션 추적
+### 세션 추적
 
 DAU(Daily Active User)와 게임 체류 시간을 추적하기 위한 연동입니다.<br>
 App 시작/종료, Background/Foreground 이동시 해당 액션에 맞는 API를 호출하여 측정할 수 있습니다.<br>
@@ -162,11 +162,11 @@ DAU는 하루동안 traceActivation을 호출한 사용자(Advertise ID 또는 U
 }
 ```
 
-## 액션 추적
+### 액션 추적
 
 In-App Purchase, 머니 획득/사용, 레벨업, 친구 수 변경등 사용자의 Action에 대해 추적할 수 있습니다.
 
-### 1. In-App Purchase
+#### 1. In-App Purchase
 In-App Purchase가 발생한 후 tracePurchase를 호출하여 매출 정보를 전송합니다.<br>
 Currency는 ISO-4217(<http://en.wikipedia.org/wiki/ISO_4217>)에서 정의한 코드를 사용합니다.<br>
 $0.99의 보석을 구매하는 경우 아래와 같이 사용합니다.<br>
@@ -184,7 +184,7 @@ Global Service를 하는 경우 상품 가격 정보는 주의해서 사용해�
 SKProductResponse의 'price' property를 사용합니다. 자세한 내용은 Apple에서 제공하는 StoreKit Reference를 참고하세요. (<https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/>)
 
 
-### 2. 재화 획득/사용
+#### 2. 재화 획득/사용
 게임내에서 재화의 획득/사용시 호출합니다. 1차 재화, 2차 재화의 변동량을 추적합니다. 일반적으로 1차 재화는 In-App Purchase를 통해서 구매하는 재화(ex. 보석, 루비등) 입니다. 2차 재화는 1차 재화를 이용하여 구매하는 재화(ex. 체리, 하트등) 입니다.<br>
 IAP를 통해서 보석 10개를 구매한 경우 아래와 같이 사용합니다.<br>
 ("CODE_IAP"는 게임에서 정의한 Code입니다. 1차 재화인 경우 Type은 0, 2차 재화인 경우 1을 사용합니다)
@@ -214,7 +214,7 @@ IAP를 통해서 보석 10개를 구매한 경우 아래와 같이 사용합니�
 
 1차 재화를 사용하여 2차 재화를 구입한 경우 실제 ‘1차 재화 감소’->‘2차 재화 증가’가 발생합니다. 하지만 2차 재화를 구입하기 위해서 1차 재화를 사용하는 경우 별도의 재화 소모로 판정하지 않고 싶은 경우 ‘2차 재화 획득’ 로그만 전송하여도 됩니다.
 
-### 3. 레벨업
+#### 3. 레벨업
 사용자 레벨이 변경되는 경우 traceLevelUp을 호출합니다. 참고로 대부분의 액션 추적 API는 레벨별 액션 추적을 위해서 사용자 Level을 같이 받습니다.<br>
 사용자 레벨이 10으로 변경되는 경우 아래와 같이 호출합니다. 한 사용자의 레벨은 반드시 증가해야만 합니다. 감소하는 경우 정확한 데이터 측정이 불가능합니다.<br>
 예를들어 "Candy Crush Sage"와 같이 스테이지로 진행 되는 게임에서 스테이지를 레벨로 사용하는 경우에는 해당 스테이지에 최초 진입할때만 레벨업 로그를 남겨야 합니다. 만약 이전 스테이지로 다시 돌아가서 플레이 하는 경우에는 레벨업 로그를 남기지 않습니다.<br>
@@ -224,7 +224,7 @@ IAP를 통해서 보석 10개를 구매한 경우 아래와 같이 사용합니�
 [TAGAnalytics traceLevelUp:10];
 ```
 
-### 4. 친구
+#### 4. 친구
 사용자의 친구 숫자를 등록합니다. 일반적으로 앱 실행 후 친구 정보 로딩이 완료된 시점에 호출하면 됩니다.
 
 ```objective-c
@@ -232,11 +232,11 @@ IAP를 통해서 보석 10개를 구매한 경우 아래와 같이 사용합니�
 ```
 
 
-## 커스텀 이벤트 사용
+### 커스텀 이벤트 사용
 
 App에서 기본지표 이외에 특정 이벤트를 정의&분석하고 싶은 경우 사용합니다.
 
-### 1. API 적용
+#### 1. API 적용
 
 ```
 [TAGAnalytics traceEvent:@”eventType”
@@ -258,7 +258,7 @@ level:10];
 
 traceEvent에 사용하는 String Type 파라미터(event type, event code, param1, param2)는 각각 50byte까지 사용할 수 있습니다. 그리고 event 하위에 발생 가능한 param1 은 300개까지, 또 param1 하위에 발생 가능한 param2는 200개까지 사용할 수 있습니다.  
 
-### 2. 지표 활용
+#### 2. 지표 활용
 
 활용 목적에 따라 이벤트 설계 시 고려할 사항은 다음과 같습니다.
 
@@ -303,7 +303,7 @@ level:10];
 ![](http://static.toastoven.net/prod_analytics/image016.png)
 
 
-## 페이스북 설치 추적
+### 페이스북 설치 추적
 
 페이스북 광고를 통한 앱 설치를 추적할 수 있습니다. 이 기능은 Facebook에서 제공하는 Deep Linking 기능을 이용합니다.
 관련하여 상세한 내용 및 테스트 방법은 Facebook에서 제공하는 문서(<https://developers.facebook.com/docs/app-ads/deep-linking>)를 참고하세요. fetchDeferredAppLink@FBSDKAppLinkUtility는 Facebook SDK에서 제공하는 API입니다.
@@ -317,9 +317,9 @@ level:10];
 }];}
 ```
 
-# SDK 설정
+## SDK 설정
 
-## 디버그 모드 활성화
+### 디버그 모드 활성화
 개발중에 SDK 로그 확인을 위해서 로그 출력 여부를 설정할 수 있습니다.<br>
 이 함수는 initializeSDK 이전에 호출해야 모든 로그를 보실 수 있습니다. 기본 값은 setDebugModeEnabled:NO입니다.
 
@@ -338,7 +338,7 @@ level:10];
 iOS : RequestWorkerThread::didReceiveResponse - <NSHTTPURLResponse: ***> { URL: *** } { status code: 200,
 ```
 
-## 디바이스 정보 확인
+### 디바이스 정보 확인
 SDK에서 수집하는 Device 정보를 확인할 수 있습니다.<br>
 현재 확인 가능한 값은 Device ID입니다.
 
@@ -351,7 +351,7 @@ void printDeviceInfo()
 }
 ```
 
-## SDK 버전 확인
+### SDK 버전 확인
 SDK 버전은 "getVersion()" 함수를 통해 확인할 수 있습니다.
 
 ```objective-c
