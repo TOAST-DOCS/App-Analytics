@@ -2,6 +2,7 @@
 
 |Version|	Release Date|	Notes|
 |---|---|---|
+|Anrdoid[1.5.2]<br>iOS[1.5.1]<br>Unity[1.5.3]|2018-05-02| [Android] appcompat-v7 v26 이상에서 리소스 충돌 오슈 수정 |
 |1.5.2|2018-02-22|[Unity] WebGL 지원 추가 |
 |1.5.1|2017-07-25|[공통] 버그 수정 (메모리릭) <br/>[공통] Campaign, Promotion(Android만 해당) 기능 제거 (API는 하위호환을 위해 유지 하지만 동작은 하지 않습니다)|
 |1.5.0|2016-12-29|[Android] 안정성 강화 [iOS] ATS 대응 작업, Enable Bitcode|
